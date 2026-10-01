@@ -47,6 +47,7 @@ No telefone, a mensagem e o CTA aparecem antes da foto. A galeria e os serviços
 - Tipografia: família condensada para títulos, sans legível para corpo. Fontes locais ou de provedor estável, com fallback.
 - Grid máximo de 1280 px, margens fluidas, ritmo de seção amplo no desktop e compacto no telefone.
 - Marcadores numéricos, linhas de oficina e recortes de foto assimétricos; evitar grade repetida de cards.
+- Ações com papéis distintos: chamada principal em uma peça amarela recortada com canal do WhatsApp visível; navegação interna como indicador vertical de percurso; serviços com rótulos específicos e motivos gráficos ligados ao polimento, interior e proteção. Links informativos usam texto direto, sem a mesma seta repetida.
 - Microinterações CSS: hover, deslocamento do brilho com ponteiro apenas em `pointer:fine`, transição de entrada curta que não bloqueia conteúdo. Respeitar `prefers-reduced-motion`.
 - Controles com foco visível, áreas de toque de ao menos 44 px, contraste legível.
 

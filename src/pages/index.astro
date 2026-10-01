@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 
 const base = import.meta.env.BASE_URL;
 const image = (file: string) => base + 'images/' + file;
@@ -18,18 +19,24 @@ const services = [
     name: 'Polimento técnico',
     description: 'Um cuidado dedicado à pintura para valorizar o acabamento e realçar o brilho do carro.',
     tag: 'PINTURA',
+    action: 'Quero falar de polimento',
+    motif: 'polimento',
   },
   {
     number: '02',
     name: 'Higienização veicular',
     description: 'Limpeza atenta do interior, dos bancos e das superfícies que fazem parte da sua rotina.',
     tag: 'INTERIOR',
+    action: 'Quero falar de higienização',
+    motif: 'higienizacao',
   },
   {
     number: '03',
     name: 'Vitrificação',
     description: 'Tratamento de proteção da pintura. Converse com a equipe sobre a indicação para o seu veículo.',
     tag: 'PROTEÇÃO',
+    action: 'Quero falar de vitrificação',
+    motif: 'vitrificacao',
   },
 ];
 
@@ -104,7 +111,7 @@ const gallery = [
         </nav>
 
         <a class="header-cta" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba">
-          Pedir orçamento <span aria-hidden="true">↗</span>
+          <span class="header-cta__icon"><WhatsAppIcon /></span><span>Conversar com a Bruni</span>
         </a>
         <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">
           <span></span><span></span>
@@ -120,8 +127,8 @@ const gallery = [
             <h1 id="hero-title">Seu carro merece <em>voltar a</em> impressionar<span class="period">.</span></h1>
             <p class="hero__description">Polimento, higienização e vitrificação feitos por quem entende que cada detalhe faz diferença.</p>
             <div class="hero__actions">
-              <a class="button button--yellow" href={whatsapp()} target="_blank" rel="noopener noreferrer">Pedir orçamento <span aria-hidden="true">↗</span></a>
-              <a class="text-link text-link--light" href="#servicos">Conhecer serviços <span aria-hidden="true">↓</span></a>
+              <a class="quote-cta" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba"><span class="quote-cta__text"><strong>Pedir orçamento</strong><small>Fale direto com a equipe</small></span><span class="quote-cta__icon"><WhatsAppIcon /></span></a>
+              <a class="services-jump" href="#servicos"><span class="services-jump__track" aria-hidden="true"><i></i></span><span><small>01 — 03 / CUIDADOS</small>Explorar serviços</span></a>
             </div>
             <div class="hero__proof">
               <span class="hero__proof-stars" aria-label="4,9 estrelas">★★★★★</span>
@@ -161,16 +168,14 @@ const gallery = [
           </div>
           <div class="services__list">
             {services.map((service) => (
-              <article class="service-row" data-reveal>
+              <article class={'service-row service-row--' + service.motif} data-reveal>
                 <span class="service-row__number">{service.number} /</span>
                 <div class="service-row__body"><span class="service-row__tag">{service.tag}</span><h3>{service.name}</h3><p>{service.description}</p></div>
-                <a class="service-row__link" href={whatsapp(service.name.toLowerCase())} target="_blank" rel="noopener noreferrer" aria-label={'Pedir orçamento de ' + service.name + ' pelo WhatsApp'}>
-                  <span aria-hidden="true">↗</span>
-                </a>
+                <div class="service-row__end"><span class={'service-row__motif service-row__motif--' + service.motif} aria-hidden="true"><i></i><i></i><i></i></span><a class="service-row__link" href={whatsapp(service.name.toLowerCase())} target="_blank" rel="noopener noreferrer" aria-label={service.action + ' pelo WhatsApp, abre em nova aba'}><span>{service.action}</span><span class="service-row__link-line" aria-hidden="true"></span></a></div>
               </article>
             ))}
           </div>
-          <p class="services__aside">Também realizamos <strong>lavagem completa.</strong> <a href={whatsapp('lavagem completa')} target="_blank" rel="noopener noreferrer">Consultar pelo WhatsApp ↗</a></p>
+          <p class="services__aside">Também realizamos <strong>lavagem completa.</strong> <a href={whatsapp('lavagem completa')} target="_blank" rel="noopener noreferrer">Pergunte sobre a lavagem</a></p>
         </div>
       </section>
 
@@ -188,7 +193,7 @@ const gallery = [
               </figure>
             ))}
           </div>
-          <div class="work__end"><span>FOTOS PUBLICADAS PELA BRUNI NO GOOGLE</span><a class="text-link text-link--light" href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Ver mais no Instagram <span aria-hidden="true">↗</span></a></div>
+          <div class="work__end"><span>FOTOS PUBLICADAS PELA BRUNI NO GOOGLE</span><a class="text-link text-link--light" href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Mais registros no Instagram</a></div>
         </div>
       </section>
 
@@ -198,11 +203,11 @@ const gallery = [
             <p class="eyebrow"><span class="eyebrow__line"></span> SEU PRÓXIMO PASSO</p>
             <h2 id="contact-title">Vamos cuidar do seu <em>carro?</em></h2>
             <p class="contact__lead">Conte para a equipe o que você procura. O orçamento começa com uma conversa.</p>
-            <a class="button button--dark" href={whatsapp()} target="_blank" rel="noopener noreferrer">Falar com a Bruni no WhatsApp <span aria-hidden="true">↗</span></a>
+            <a class="contact-cta" href={whatsapp()} target="_blank" rel="noopener noreferrer"><span class="contact-cta__mark"><WhatsAppIcon /></span><span><small>CANAL DIRETO / BRUNI</small><strong>Conversar sobre meu carro</strong></span></a>
           </div>
           <div class="contact__details" data-reveal>
-            <div class="contact__detail"><span>01 / ENDEREÇO</span><address>Av. Salinas, 245<br />Bosque dos Eucaliptos<br />São José dos Campos · SP</address><a href={directions} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div>
-            <div class="contact__detail"><span>02 / CONTATO</span><a class="contact__phone" href="tel:+5512981209568">(12) 98120-9568</a><div class="contact__social"><a href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/bruniesteticaautomotiva" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div>
+            <div class="contact__detail"><span>01 / ENDEREÇO</span><address>Av. Salinas, 245<br />Bosque dos Eucaliptos<br />São José dos Campos · SP</address><a href={directions} target="_blank" rel="noopener noreferrer">Traçar rota no mapa</a></div>
+            <div class="contact__detail"><span>02 / CONTATO</span><a class="contact__phone" href="tel:+5512981209568">(12) 98120-9568</a><div class="contact__social"><a href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/bruniesteticaautomotiva" target="_blank" rel="noopener noreferrer">Facebook</a></div></div>
           </div>
         </div>
       </section>
@@ -216,7 +221,7 @@ const gallery = [
       </div>
     </footer>
 
-    <a class="mobile-contact" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba"><span class="mobile-contact__dot"></span> Pedir orçamento <span aria-hidden="true">↗</span></a>
+    <a class="mobile-contact" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba"><span class="mobile-contact__dot"></span><span>Pedir orçamento</span><span class="mobile-contact__icon"><WhatsAppIcon /></span></a>
     <script src="../scripts/effects.ts"></script>
   </body>
 </html>
