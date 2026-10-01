@@ -6,7 +6,7 @@
 - Serviços prioritários: polimento técnico, higienização veicular e vitrificação. Lavagem completa aparece como serviço complementar confirmado no perfil do Google.
 - Público: motoristas da região que desejam cuidar da aparência e da limpeza do carro.
 - Objetivo: contato para orçamento no WhatsApp (12) 98120-9568, com mensagem identificando origem no site.
-- Escopo: uma landing page estática, responsiva e acessível, sem formulário, backend, preços ou agendamento online. Sem publicação nesta etapa.
+- Escopo: uma landing page estática, responsiva e acessível, sem formulário, backend, preços ou agendamento online. Publicação no GitHub Pages autorizada posteriormente.
 - Direção aprovada: mistura de hierarquia cinematográfica, acentos de alto contraste e narrativa de rolagem, com efeitos leves de cursor e abertura rápida, para uma identidade própria da Bruni.
 
 ## 2. Fontes e referências
@@ -59,7 +59,7 @@ No telefone, a mensagem e o CTA aparecem antes da foto. A galeria e os serviços
 - `src/styles/global.css`: tokens, layout, responsividade e movimento.
 - `src/scripts/effects.ts`: cursor e abertura progressiva com fallback sem JavaScript.
 - `public/images/`: fotos locais convertidas para WebP; sem dependência de URL temporária do Google.
-- Domínio/canonical: não definidos, pois o pedido não incluiu publicação. Configurar antes de publicar.
+- GitHub Pages: `https://nexiu-dev.github.io/BruniEsteticaAutomotiva/`, com base `/BruniEsteticaAutomotiva/` e canonical configurado no build de produção.
 
 ## 7. Etapas e aceite
 

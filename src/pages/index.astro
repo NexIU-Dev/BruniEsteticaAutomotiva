@@ -4,6 +4,7 @@ import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 
 const base = import.meta.env.BASE_URL;
 const image = (file: string) => base + 'images/' + file;
+const canonical = Astro.site ? new URL(base, Astro.site).toString() : undefined;
 const whatsapp = (service?: string) => {
   const detail = service ? ' de ' + service : '';
   return 'https://wa.me/5512981209568?text=' +
@@ -74,6 +75,9 @@ const gallery = [
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Bruni Estética Automotiva | Cuidado que se nota" />
     <meta property="og:description" content="Polimento, higienização e vitrificação em São José dos Campos. Fale com a Bruni pelo WhatsApp." />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    {canonical && <meta property="og:image" content={new URL(image('polimento.webp'), Astro.site).toString()} />}
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/png" href={image('bruni-mark.png')} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
