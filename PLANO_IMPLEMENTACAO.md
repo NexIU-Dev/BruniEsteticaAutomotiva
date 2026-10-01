@@ -12,6 +12,7 @@
 ## 2. Fontes e referências
 
 - [Perfil da Bruni no Google](https://www.google.com/search?q=Bruni+Est%C3%A9tica+Automotiva+S%C3%A3o+Jos%C3%A9+dos+Campos&udm=local): endereço, telefone, serviços e fotos filtradas em **Do proprietário**. O usuário autorizou usar essas fotos.
+- Símbolo oficial enviado pelo usuário: `public/images/bruni-mark.png`, aplicado à identidade da página e ao favicon.
 - [Instagram](https://www.instagram.com/bruniesteticaautomotiva/) e [Facebook](https://www.facebook.com/bruniesteticaautomotiva): links oficiais fornecidos; acesso direto à galeria indisponível durante a pesquisa.
 - [CEO Mobile Detailing por Volts](https://voltsconsulting.com/project/ceo-mobile-detailing/): hierarquia da primeira tela e sensação de movimento. Adaptar a interação do ponteiro e a abertura rápida sem copiar a identidade.
 - [Automotive Detailing no Dribbble](https://dribbble.com/shots/27154277-Automotive-Detailing-Website-Dark-Mode-Landing-Page-UI): tipografia forte, contraste e acento pontual. É inspiração visual, não template de código.
@@ -34,9 +35,9 @@ As fotos vieram da coleção **Do proprietário** no Google. São versões de vi
 
 1. Navegação curta: serviços, trabalhos, localização e botão de orçamento.
 2. Hero: “Seu carro merece voltar a impressionar.” Subtexto sobre polimento, higienização e vitrificação em São José dos Campos; CTA para orçamento e foto real do polimento.
-3. Faixa de serviço: os três serviços com descrições objetivas e links de WhatsApp específicos.
-4. Trabalhos reais: galeria editorial com as fotos de carros e higienização; link para o Instagram.
-5. Chamada sobre o cuidado com os detalhes: foto do processo, sem números ou garantias inventados.
+3. Declaração curta sobre pintura e interior.
+4. Serviços: polimento, higienização e vitrificação com descrições objetivas e links de WhatsApp específicos.
+5. Trabalhos reais: galeria editorial com legendas sobre o que cada imagem mostra e link para o Instagram.
 6. Localização e contato: Av. Salinas, 245, Bosque dos Eucaliptos; mapa externo, WhatsApp e redes sociais.
 
 No telefone, a mensagem e o CTA aparecem antes da foto. A galeria e os serviços seguem em leitura vertical, com CTA de contato acessível ao longo da navegação. No desktop, a primeira tela divide texto e fotografia; os serviços usam linhas editoriais e a galeria usa tamanhos variados. Mensagens do WhatsApp começam com “Olá! Vim pelo site da Bruni...” e incluem o serviço quando aplicável.
@@ -46,8 +47,8 @@ No telefone, a mensagem e o CTA aparecem antes da foto. A galeria e os serviços
 - Grafite `#111412`, off-white `#f2eee7`, amarelo `#f3c41b` visto na comunicação da Bruni e cinza metálico `#a8ada8`. O laranja da oficina aparece apenas nas fotografias.
 - Tipografia: família condensada para títulos, sans legível para corpo. Fontes locais ou de provedor estável, com fallback.
 - Grid máximo de 1280 px, margens fluidas, ritmo de seção amplo no desktop e compacto no telefone.
-- Marcadores numéricos, linhas de oficina e recortes de foto assimétricos; evitar grade repetida de cards.
-- Ações com papéis distintos: chamada principal em uma peça amarela recortada com canal do WhatsApp visível; navegação interna como indicador vertical de percurso; serviços com rótulos específicos e motivos gráficos ligados ao polimento, interior e proteção. Links informativos usam texto direto, sem a mesma seta repetida.
+- Categorias reais dos cuidados, fotografia do processo e recortes de foto assimétricos; evitar numeradores e desenhos decorativos sem função.
+- Ações com papéis distintos: chamada principal em uma peça amarela recortada com canal do WhatsApp visível; navegação interna como indicador vertical de percurso; serviços com rótulos específicos e links de WhatsApp por cuidado. Links informativos usam texto direto, sem a mesma seta repetida.
 - Microinterações CSS: hover, deslocamento do brilho com ponteiro apenas em `pointer:fine`, transição de entrada curta que não bloqueia conteúdo. Respeitar `prefers-reduced-motion`.
 - Controles com foco visível, áreas de toque de ao menos 44 px, contraste legível.
 

@@ -1,4 +1,10 @@
-# Origem das fotos
+# Origem dos ativos
+
+## Marca
+
+`public/images/bruni-mark.png` é o símbolo da Bruni enviado pelo usuário nesta conversa. Ele é usado no cabeçalho, rodapé, abertura e favicon. A arte recebida mede 150 × 150 px; para usos maiores, o arquivo original da marca dará mais nitidez.
+
+## Fotografias
 
 As imagens abaixo foram publicadas na coleção **Do proprietário** do [perfil da Bruni Estética Automotiva no Google](https://www.google.com/search?q=Bruni+Est%C3%A9tica+Automotiva+S%C3%A3o+Jos%C3%A9+dos+Campos&udm=local). O usuário autorizou seu uso nesta landing em 1º de outubro de 2026. Os arquivos em `public/images/` são cópias WebP otimizadas. A qualidade disponível no Google limita a ampliação e pode ser melhorada com os arquivos originais da empresa.
 
