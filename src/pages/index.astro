@@ -1,0 +1,222 @@
+---
+import '../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+const image = (file: string) => base + 'images/' + file;
+const whatsapp = (service?: string) => {
+  const detail = service ? ' de ' + service : '';
+  return 'https://wa.me/5512981209568?text=' +
+    encodeURIComponent('Olá! Vim pelo site da Bruni e gostaria de um orçamento' + detail + ' para meu carro.');
+};
+
+const googleProfile = 'https://www.google.com/search?q=Bruni+Est%C3%A9tica+Automotiva+S%C3%A3o+Jos%C3%A9+dos+Campos&udm=local';
+const directions = 'https://www.google.com/maps/dir/?api=1&destination=Av.+Salinas,+245,+Bosque+dos+Eucaliptos,+S%C3%A3o+Jos%C3%A9+dos+Campos,+SP';
+
+const services = [
+  {
+    number: '01',
+    name: 'Polimento técnico',
+    description: 'Um cuidado dedicado à pintura para valorizar o acabamento e realçar o brilho do carro.',
+    tag: 'PINTURA',
+  },
+  {
+    number: '02',
+    name: 'Higienização veicular',
+    description: 'Limpeza atenta do interior, dos bancos e das superfícies que fazem parte da sua rotina.',
+    tag: 'INTERIOR',
+  },
+  {
+    number: '03',
+    name: 'Vitrificação',
+    description: 'Tratamento de proteção da pintura. Converse com a equipe sobre a indicação para o seu veículo.',
+    tag: 'PROTEÇÃO',
+  },
+];
+
+const gallery = [
+  {
+    file: 'honda.webp',
+    alt: 'Honda preto fotografado no espaço da Bruni Estética Automotiva',
+    title: 'Acabamento em foco',
+    label: 'REGISTRO DA BRUNI',
+    width: 765,
+    height: 1020,
+    className: 'work-card work-card--honda',
+  },
+  {
+    file: 'classico.webp',
+    alt: 'Carro clássico verde publicado no perfil da Bruni',
+    title: 'Cada carro, uma história',
+    label: 'REGISTRO DA BRUNI',
+    width: 1020,
+    height: 1020,
+    className: 'work-card work-card--classic',
+  },
+  {
+    file: 'higienizacao.webp',
+    alt: 'Comparação publicada pela Bruni de um banco antes e depois da higienização',
+    title: 'Cuidado por dentro',
+    label: 'HIGIENIZAÇÃO',
+    width: 1020,
+    height: 1020,
+    className: 'work-card work-card--interior',
+  },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111412" />
+    <title>Bruni Estética Automotiva | Polimento, Higienização e Vitrificação em SJC</title>
+    <meta name="description" content="Polimento técnico, higienização veicular e vitrificação em São José dos Campos. Conheça o trabalho da Bruni Estética Automotiva e peça seu orçamento pelo WhatsApp." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Bruni Estética Automotiva | Cuidado que se nota" />
+    <meta property="og:description" content="Polimento, higienização e vitrificação em São José dos Campos. Fale com a Bruni pelo WhatsApp." />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href={base + 'favicon.svg'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href={image('polimento.webp')} />
+  </head>
+  <body>
+    <div class="intro" aria-hidden="true"><span class="intro__mark">B<span>.</span></span><span class="intro__line"></span></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="#inicio" aria-label="Bruni Estética Automotiva, voltar ao início">
+          <span class="brand__symbol" aria-hidden="true">B<span>.</span></span>
+          <span class="brand__text"><strong>BRUNI</strong><small>ESTÉTICA AUTOMOTIVA</small></span>
+        </a>
+
+        <nav class="main-nav" id="navegacao" aria-label="Navegação principal">
+          <a href="#servicos">Serviços</a>
+          <a href="#trabalhos">Nosso trabalho</a>
+          <a href="#localizacao">Onde estamos</a>
+        </nav>
+
+        <a class="header-cta" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba">
+          Pedir orçamento <span aria-hidden="true">↗</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__grid shell">
+          <div class="hero__copy">
+            <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span> SÃO JOSÉ DOS CAMPOS · SP</p>
+            <h1 id="hero-title">Seu carro merece <em>voltar a</em> impressionar<span class="period">.</span></h1>
+            <p class="hero__description">Polimento, higienização e vitrificação feitos por quem entende que cada detalhe faz diferença.</p>
+            <div class="hero__actions">
+              <a class="button button--yellow" href={whatsapp()} target="_blank" rel="noopener noreferrer">Pedir orçamento <span aria-hidden="true">↗</span></a>
+              <a class="text-link text-link--light" href="#servicos">Conhecer serviços <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero__proof">
+              <span class="hero__proof-stars" aria-label="4,9 estrelas">★★★★★</span>
+              <a href={googleProfile} target="_blank" rel="noopener noreferrer">4,9 no Google · 86 avaliações <span class="proof-date">(out/2026)</span></a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__image-wrap">
+              <img src={image('polimento.webp')} alt="Profissional da Bruni polindo o capô de um carro preto" width="1200" height="676" fetchpriority="high" decoding="async" />
+            </div>
+            <span class="hero__photo-label"><b>01 /</b> O CUIDADO ACONTECE AQUI</span>
+            <span class="hero__corner" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="hero__rail shell" aria-label="Especialidades da Bruni">
+          <span>POLIMENTO TÉCNICO</span><i aria-hidden="true"></i>
+          <span>HIGIENIZAÇÃO</span><i aria-hidden="true"></i>
+          <span>VITRIFICAÇÃO</span>
+          <span class="hero__rail-end" aria-hidden="true">BRUNI / SJC</span>
+        </div>
+      </section>
+
+      <section class="statement" aria-label="Nossa essência">
+        <div class="shell statement__inner">
+          <span class="section-index">[ SOBRE O CUIDADO ]</span>
+          <p data-reveal>Brilho por fora.<br /><strong>Cuidado por dentro<span class="period">.</span></strong></p>
+          <span class="statement__note">Da pintura ao interior, o seu carro recebe atenção em cada etapa.</span>
+        </div>
+      </section>
+
+      <section class="services section-pad" id="servicos" aria-labelledby="services-title">
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <div><p class="eyebrow"><span class="eyebrow__line"></span> O QUE FAZEMOS</p><h2 id="services-title">O cuidado certo para cada <em>detalhe.</em></h2></div>
+            <p>Escolha o que seu carro precisa e fale diretamente com a equipe para receber uma indicação e um orçamento.</p>
+          </div>
+          <div class="services__list">
+            {services.map((service) => (
+              <article class="service-row" data-reveal>
+                <span class="service-row__number">{service.number} /</span>
+                <div class="service-row__body"><span class="service-row__tag">{service.tag}</span><h3>{service.name}</h3><p>{service.description}</p></div>
+                <a class="service-row__link" href={whatsapp(service.name.toLowerCase())} target="_blank" rel="noopener noreferrer" aria-label={'Pedir orçamento de ' + service.name + ' pelo WhatsApp'}>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </article>
+            ))}
+          </div>
+          <p class="services__aside">Também realizamos <strong>lavagem completa.</strong> <a href={whatsapp('lavagem completa')} target="_blank" rel="noopener noreferrer">Consultar pelo WhatsApp ↗</a></p>
+        </div>
+      </section>
+
+      <section class="work section-pad" id="trabalhos" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="work__heading" data-reveal>
+            <div><p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span> TRABALHOS REAIS</p><h2 id="work-title">O resultado<br />está nos <em>detalhes.</em></h2></div>
+            <p>Um recorte dos carros e cuidados registrados pela própria Bruni.</p>
+          </div>
+          <div class="work__grid">
+            {gallery.map((item) => (
+              <figure class={item.className} data-reveal>
+                <div class="work-card__image"><img src={image(item.file)} alt={item.alt} width={item.width} height={item.height} loading="lazy" decoding="async" /></div>
+                <figcaption><span>{item.label}</span><strong>{item.title}</strong></figcaption>
+              </figure>
+            ))}
+          </div>
+          <div class="work__end"><span>FOTOS PUBLICADAS PELA BRUNI NO GOOGLE</span><a class="text-link text-link--light" href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Ver mais no Instagram <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <section class="contact section-pad" id="localizacao" aria-labelledby="contact-title">
+        <div class="shell contact__grid">
+          <div data-reveal>
+            <p class="eyebrow"><span class="eyebrow__line"></span> SEU PRÓXIMO PASSO</p>
+            <h2 id="contact-title">Vamos cuidar do seu <em>carro?</em></h2>
+            <p class="contact__lead">Conte para a equipe o que você procura. O orçamento começa com uma conversa.</p>
+            <a class="button button--dark" href={whatsapp()} target="_blank" rel="noopener noreferrer">Falar com a Bruni no WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="contact__details" data-reveal>
+            <div class="contact__detail"><span>01 / ENDEREÇO</span><address>Av. Salinas, 245<br />Bosque dos Eucaliptos<br />São José dos Campos · SP</address><a href={directions} target="_blank" rel="noopener noreferrer">Como chegar ↗</a></div>
+            <div class="contact__detail"><span>02 / CONTATO</span><a class="contact__phone" href="tel:+5512981209568">(12) 98120-9568</a><div class="contact__social"><a href="https://www.instagram.com/bruniesteticaautomotiva/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/bruniesteticaautomotiva" target="_blank" rel="noopener noreferrer">Facebook ↗</a></div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer__inner">
+        <a class="brand brand--footer" href="#inicio" aria-label="Bruni Estética Automotiva, voltar ao início"><span class="brand__symbol" aria-hidden="true">B<span>.</span></span><span class="brand__text"><strong>BRUNI</strong><small>ESTÉTICA AUTOMOTIVA</small></span></a>
+        <p>Polimento · Higienização · Vitrificação<br />São José dos Campos, SP</p>
+        <span>© {new Date().getFullYear()} BRUNI ESTÉTICA AUTOMOTIVA</span>
+      </div>
+    </footer>
+
+    <a class="mobile-contact" href={whatsapp()} target="_blank" rel="noopener noreferrer" aria-label="Pedir orçamento pelo WhatsApp, abre em nova aba"><span class="mobile-contact__dot"></span> Pedir orçamento <span aria-hidden="true">↗</span></a>
+    <script src="../scripts/effects.ts"></script>
+  </body>
+</html>
